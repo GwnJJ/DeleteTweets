@@ -1,14 +1,14 @@
-var authorization = "Bearer ***"; // replace by authorization value
+var authorization = "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA"; // replace by authorization value
 var ua = navigator.userAgentData.brands.map(brand => `"${brand.brand}";v="${brand.version}"`).join(', ');
-var client_tid = "***"; // replace by X-Client-Transaction-Id value
-var client_uuid = "***"; // replace by X-Client-Uuid value
+var client_tid = "WC3LsUR/3MQus3B7eiDm3TCd1sGblBfXsodTVcX6JmUnh/CmdH7v7RqTjTzPnPZdfHJPM1lMqyLJjkv8RgtAyDXWRXOlWQ"; // replace by X-Client-Transaction-Id value
+var client_uuid = "ca65f851-15af-4990-bb58-b83429c536e4"; // replace by X-Client-Uuid value
 var csrf_token = getCookie("ct0");
 var random_resource = "uYU5M2i12UhDvDTzN6hZPg";
 var random_resource_old_tweets = "H8OOoI-5ZE4NxgRr8lfyWg"
 var language_code = navigator.language.split("-")[0]
 var tweets_to_delete = []
 var user_id = getCookie("twid").substring(4);
-var username = "YourUsernameHere" // replace with your username
+var username = "GewoonJeffie" // replace with your username
 var stop_signal = undefined
 var twitter_archive_content = undefined
 var twitter_archive_loading_confirmed = false
@@ -22,7 +22,7 @@ var delete_options = {
 	 */
 	"from_archive":false,
 	/*  unretweet: seems obvious, but it unretweet if set to true */
-	"unretweet":false,
+	"unretweet":true,
 	/* do_not_remove_pinned_tweet: THIS CAN FAIL. Twitter has too many different way to format their response that I cannot guarantee this to work 100%
 	   It should work for newer tweets. HOWEVER, use the "tweets_to_ignore" below and put in your pinned tweet ID, this will work 100%.
 	   'why do you make this option then', this is a safeguard for people that forgot to add their pinned tweet in the ignore list.
@@ -61,7 +61,7 @@ var delete_options = {
 		You would set after_date to 2023-03-18 (effectively 6 months ago) and before_date 2023-09-20 (tomorrow's date. So it deletes tweets from today too) 
 	*/
 	"after_date":new Date('1900-01-01'), // year-month-day
-	"before_date":new Date('2100-01-01') // year-month-day
+	"before_date":new Date('2022-01-01') // year-month-day
 }
 
 function buildAcceptLanguageString() {
